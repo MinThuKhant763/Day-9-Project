@@ -1,0 +1,38 @@
+.card{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    margin: 14px 0;
+}
+.card-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.card-price{
+    font-weight: 700;
+}
+.card-button{
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-input{
+    text-align: center;
+    display: block;
+    width: 50px;
+    margin: 35px 0 10px 0 ;
+    padding: 4px 2px;
+    border: 1px solid orange;
+    font-size: 16px;
+}
+.card-input:focus{
+    border: 1px solid orange;
+    outline: none;
+}

@@ -1,0 +1,44 @@
+.cart-box{
+    width: 60%;
+    background-color: #fff;
+    padding: 20px 80px;
+    position: relative;
+    z-index: 1000;
+}
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total p{
+    font-size: 20px;
+    font-weight: 800;
+}
+.cart-btns{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.order-btn{
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.close-btn{
+    background-color: transparent;
+    border: 1px solid orange;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: orange;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 20px;
+}
