@@ -1,14 +1,13 @@
-import './App.css'
+import './App.css';
 import Main from './layout/Main';
-
+import ItemContextProvider from './store/itemContext';
 function App() {
-  
 
   return (
-    <section>
-      <Main/>
-    </section>
-  )
+    <ItemContextProvider>
+      <Main />
+    </ItemContextProvider>
+  );
 }
 
-export default App
+export default App;

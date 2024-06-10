@@ -1,9 +1,13 @@
 .cart-box{
-    width: 60%;
+    width: 80%;
     background-color: #fff;
     padding: 20px 80px;
-    position: relative;
-    z-index: 1000;
+    z-index: 30;
+    position: fixed;
+    border-radius: 8px;
+    top: 40vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .total{
     display: flex;
@@ -41,4 +45,31 @@
     font-weight: 600;
     cursor: pointer;
     margin-right: 20px;
+}
+
+.card-quantity{
+    padding: 4px 6px;
+    text-align: center;
+    background-color: orange;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 10px;
+}
+.quantity-btn{
+    border: 1px solid orange;
+    background-color: transparent;
+    color: orange;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.m-ctr{
+    margin-right: 8px;
+}
+.no-item{
+    text-align: center;
+}
+.overflow-ctr{
+    height: 300px;
+    overflow-y: scroll;
 }

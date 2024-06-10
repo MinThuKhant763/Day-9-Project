@@ -1,12 +1,18 @@
-import React from 'react'
-import './BackDrop.css'
+import React from 'react';
+import './BackDrop.css';
 import Cart from './Cart';
-const BackDrop = () => {
+const BackDrop = ({ showCart,hideCartHandler }) => {
   return (
-    <section className='backdrop'>
-      <Cart/>
-    </section>
-  )
-}
+    <>
+      {
+        showCart &&
+        <>
+        <section className='backdrop' onClick={hideCartHandler}> </section>
+        <Cart hideCartHandler={hideCartHandler} />
+        </>
+      }
+    </>
+  );
+};
 
-export default BackDrop
+export default BackDrop;

@@ -1,50 +1,46 @@
-
-import './Cart.css'
+import { useContext } from 'react';
+import { ItemContext } from '../store/itemContext';
+import './Cart.css';
 import CartItem from './CartItem';
 
-const fruits = [
-    {
-        id: 1,
-        price: 10.98,
-        name: "Banana",
-        description: "fresh banana from thailand",
-        quantity:2,
-    },
-    {
-        id: 2,
-        price: 12.98,
-        name: "Apple",
-        description: "fresh apple from thailand",
-        quantity: 1,
-    },
-    {
-        id: 1,
-        price: 8.89,
-        name: "Mango",
-        description: "fresh mango from thailand",
-        quantity: 2,
-    },
-]
-const Cart = () => {
-  return (
-    <section className='cart-box'>
-          <h2>Carts</h2>
-          {
-              fruits.map((fruit) => (
-                  <CartItem key={fruit.id} fruit={fruit} />
-              ))
-          }
-          <hr />
-          <div className='total'>
-              <h3>Total price</h3>
-              <p>$ 3000</p>
-          </div>
-          <div className='cart-btns'>
-              <button className='close-btn'>Close</button>
-              <button className='order-btn'>Order</button>
-          </div>
-    </section>
-  )
-}
 
-export default Cart
+const Cart = ({ hideCartHandler }) => {
+    const { items, totalAmount } = useContext(ItemContext);
+    const totalPrice = `$ ${ totalAmount.toFixed(2) } `;
+    return (
+        <section className='cart-box'>
+            <h2>You are cart items are here</h2>
+            <section className='overflow-ctr'>
+                {
+                    items.length < 1 ?
+                        (<h1 className='no-item'>No item in your cart !!!</h1>)
+                        :
+                        (<>
+                            {
+                                items.map((fruit) => (
+                                    <CartItem key={ fruit.id } fruit={ fruit } />
+                                ))
+                            }
+                        </>)
+                }
+
+            </section>
+            <hr />
+            <div className='total'>
+                <h3>Total price</h3>
+                <p>{totalPrice}</p>
+            </div>
+            <div className='cart-btns'>
+                <button className='close-btn' onClick={ hideCartHandler }>Close</button>
+                {
+                    items.length < 1 ?
+                        (<></>) :     
+                        (<button className='order-btn' onClick={()=>alert("ordered !!")}>Order</button>)
+                }
+               
+            </div>
+        </section>
+    );
+};
+
+export default Cart;
